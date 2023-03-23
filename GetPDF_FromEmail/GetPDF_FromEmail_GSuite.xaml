@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1150,3870.6666666666665</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1150,3664</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetPDF_FromEmail_GSuite_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="48">
@@ -126,7 +126,7 @@
       <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="1. Check Gmail, pricing@ccfltd.co.uk mailbox, for an email from Siniat or Knauf.&#xA;2. Check email relates to a Claimback Agreement and has an attachment.&#xA;3. If the PDF attachment is missing, reply to email requesting PDF.&#xA;4. Otherwise download the PDF attachment for upload to the CCF App." DisplayName="GetPDF_FromEmail_GSuite" sap:VirtualizedContainerService.HintSize="846,3806" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="1. Check Gmail, pricing@ccfltd.co.uk mailbox, for an email from Siniat or Knauf.&#xA;2. Check email relates to a Claimback Agreement and has an attachment.&#xA;3. If the PDF attachment is missing, reply to email requesting PDF.&#xA;4. Otherwise download the PDF attachment for upload to the CCF App." DisplayName="GetPDF_FromEmail_GSuite" sap:VirtualizedContainerService.HintSize="846,3599.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="supplierName" />
       <Variable x:TypeArguments="x:String" Name="receivedDate" />
@@ -137,19 +137,19 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <umab:GmailApplicationCard Account="dperera@mitrai.com" ConnectionAccountName="danancha.perera@travisperkins.co.uk" ConnectionId="db9cb331-0eb4-ed11-ba77-0003ffe7e379" DisplayName="Use Gmail" EmailAddress="dperera@mitrai.com" sap:VirtualizedContainerService.HintSize="784,3616.6666666666665" sap2010:WorkflowViewState.IdRef="GmailApplicationCard_1" Timeout="90" UseConnectionService="False">
+    <umab:GmailApplicationCard Account="dperera@mitrai.com" ConnectionAccountName="danancha.perera@travisperkins.co.uk" ConnectionId="db9cb331-0eb4-ed11-ba77-0003ffe7e379" DisplayName="Use Gmail" EmailAddress="dperera@mitrai.com" sap:VirtualizedContainerService.HintSize="784,3410" sap2010:WorkflowViewState.IdRef="GmailApplicationCard_1" Timeout="90" UseConnectionService="False">
       <umab:GmailApplicationCard.Body>
         <ActivityAction x:TypeArguments="um:IMailQuickHandle">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Gmail" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="750,3428.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_16">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="750,3222" sap2010:WorkflowViewState.IdRef="Sequence_16">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <umab:ForEachEmailX DisplayName="For Each Email" sap:VirtualizedContainerService.HintSize="688,3318" sap2010:WorkflowViewState.IdRef="ForEachEmailX_1" IncludeSubfolders="False" Mails="[Gmail.Folder(&quot;Inbox&quot;)]" NumberOfEmailsLimit="100" UnreadOnly="True" WithAttachmentsOnly="False">
+            <umab:ForEachEmailX DisplayName="For Each Email" sap:VirtualizedContainerService.HintSize="688,3111.3333333333335" sap2010:WorkflowViewState.IdRef="ForEachEmailX_1" IncludeSubfolders="False" Mails="[Gmail.Folder(&quot;Inbox&quot;)]" NumberOfEmailsLimit="100" UnreadOnly="True" WithAttachmentsOnly="False">
               <umab:ForEachEmailX.Body>
                 <ActivityAction x:TypeArguments="snm:MailMessage, x:Int32">
                   <ActivityAction.Argument1>
@@ -158,14 +158,14 @@
                   <ActivityAction.Argument2>
                     <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                   </ActivityAction.Argument2>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="654,3054" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="654,2847.3333333333335" sap2010:WorkflowViewState.IdRef="Sequence_17">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <umab:MarkMailAsReadX DisplayName="Mark Email As Read/Unread" sap:VirtualizedContainerService.HintSize="592,136.66666666666666" sap2010:WorkflowViewState.IdRef="MarkMailAsReadX_1" MailMessage="[CurrentMail]" MarkAs="Read" />
-                    <If Condition="[CurrentMail.Attachments.Any = true]" DisplayName="If - Check if attachments available" sap:VirtualizedContainerService.HintSize="592,2766.6666666666665" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If Condition="[CurrentMail.Attachments.Any = true]" DisplayName="If - Check if attachments available" sap:VirtualizedContainerService.HintSize="592,2560" sap2010:WorkflowViewState.IdRef="If_3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -264,7 +264,7 @@
                         </Sequence>
                       </If.Then>
                       <If.Else>
-                        <Sequence sap2010:Annotation.AnnotationText="Send email requesting attachments." sap:VirtualizedContainerService.HintSize="496,1091.3333333333333" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                        <Sequence sap2010:Annotation.AnnotationText="Send email requesting attachments." sap:VirtualizedContainerService.HintSize="496,884.6666666666666" sap2010:WorkflowViewState.IdRef="Sequence_15">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="firstName" />
                             <Variable x:TypeArguments="x:String" Name="secondName" />
@@ -277,22 +277,6 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[CurrentMail.From.Address]" />
-                          <Assign sap:VirtualizedContainerService.HintSize="434,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_4">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">[firstName]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">Hello</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                          <Assign sap:VirtualizedContainerService.HintSize="434,63.333333333333336" sap2010:WorkflowViewState.IdRef="Assign_5">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">[secondName]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">This Is an automated response As the email received From you regarding a Claimback cannot be progressed As there Is no PDF attachment</InArgument>
-                            </Assign.Value>
-                          </Assign>
                           <umab:ReplyToMailX AdditionalCc="{x:Null}" AdditionalTo="{x:Null}" Bcc="{x:Null}" Body="{x:Null}" HtmlBodyFromText="{x:Null}" DisplayName="Reply To Email" sap:VirtualizedContainerService.HintSize="434,381.3333333333333" sap2010:WorkflowViewState.IdRef="ReplyToMailX_3" IsDraft="False" MailMessage="[CurrentMail]" MaxBodyDocumentSizeMB="2" NewSubject="[&quot;Re: &quot; + CurrentMail.Subject + &quot; - No attachments found&quot;]" ReplyToAll="False" UseDocumentAsBody="False">
                             <umab:ReplyToMailX.Files>
                               <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
