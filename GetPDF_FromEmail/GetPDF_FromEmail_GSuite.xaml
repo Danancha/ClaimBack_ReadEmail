@@ -257,8 +257,12 @@
                           </ui:IfElseIf>
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="DocumentExtraction\DocumentExtraction.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="451.3333333333333,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="DocumentExtraction\DocumentExtraction.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="x:String" x:Key="In_supplierName">[supplierName]</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="In_ReceivedDate">[receivedDate]</InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_supplierName">
+                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="supplierName" />
+                              </InArgument>
+                              <InArgument x:TypeArguments="x:String" x:Key="In_ReceivedDate">
+                                <VisualBasicValue x:TypeArguments="x:String" ExpressionText="receivedDate" />
+                              </InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                           </ui:InvokeWorkflowFile>
                         </Sequence>
